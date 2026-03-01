@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/user.routes');
-const authRoutes = require('./routes/auth.routes')
-const noteRoutes = require('./routes/note.routes')
+const authRoutes = require('./routes/auth.routes');
+const noteRoutes = require('./routes/note.routes');
+const adminRoutes = require('./routes/admin.routes');
 const morgan = require('morgan');
 
 dotenv.config();
@@ -17,5 +18,7 @@ app.use(morgan('dev'));
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
+app.use('/api/admin', adminRoutes);
 
 module.exports = app;
+ 
